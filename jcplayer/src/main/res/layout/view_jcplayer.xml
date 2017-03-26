@@ -6,46 +6,46 @@ android:orientation="vertical"
 tools:context="com.example.jean.jcplayer.JcPlayerView">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@drawable/bg_player_white"
+        android:background="#d2d2d2"
         android:layout_height="@dimen/player_height"
         android:id="@+id/relativeLayout">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            android:id="@+id/linearLayout">
+            android:paddingEnd="5dp"
+            android:paddingStart="16dp">
 
             <TextView
                 android:id="@+id/txt_current_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textColor="@android:color/black"
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
-                android:textSize="@dimen/text_size"
+                android:text="00:00"
                 android:textAlignment="center"
-                android:text="00:00"/>
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size" />
 
             <SeekBar
                 android:id="@+id/seek_bar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/txt_total_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textColor="@android:color/black"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical"
-                android:textSize="@dimen/text_size"
+                android:text="00:00"
                 android:textAlignment="center"
-                android:text="00:00"/>
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size" />
         </LinearLayout>
 
         <ImageButton
