@@ -67,7 +67,12 @@ public class JcNotificationPlayer implements JcPlayerService.JcPlayerServiceList
                     .setContent(createNotificationPlayerView())
                     .setContentIntent(PendingIntent.getActivity(context, NOTIFICATION_ID, openUi, PendingIntent.FLAG_CANCEL_CURRENT))
                     .setCategory(Notification.CATEGORY_SOCIAL);
-            notificationManager.notify(NOTIFICATION_ID, notificationCompat.build());
+            try {
+                notificationManager.notify(NOTIFICATION_ID, notificationCompat.build());
+            } catch (RuntimeException runtimeException) {
+                            //unhandle exception
+                            }
+
         }
     }
 
