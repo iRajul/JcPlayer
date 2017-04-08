@@ -43,7 +43,12 @@ public class JcNotificationPlayer implements JcPlayerService.JcPlayerServiceList
         this.iconResource = iconResourceResource;
         Intent openUi = new Intent(context, context.getClass());
         openUi.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        JcAudioPlayer.getInstance().registerNotificationListener(this);
+        if(JcAudioPlayer.getInstance() != null)
+        {
+            JcAudioPlayer.getInstance().registerNotificationListener(this);
+        }
+        else
+            return;
 
         if(notificationManager == null)
             notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

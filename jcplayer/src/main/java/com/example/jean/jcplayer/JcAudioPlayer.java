@@ -169,7 +169,8 @@ public class JcAudioPlayer {
 
     private void updatePositionAudioList() {
         for(int i = 0; i < playlist.size(); i ++){
-            if(playlist.get(i).getId() == currentJcAudio.getId())
+            if(currentJcAudio != null &&
+                    playlist.get(i).getId() == currentJcAudio.getId())
                 this.currentPositionList = i;
         }
     }
