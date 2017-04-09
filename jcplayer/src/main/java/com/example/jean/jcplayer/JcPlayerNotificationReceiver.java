@@ -21,8 +21,10 @@ public class JcPlayerNotificationReceiver extends BroadcastReceiver {
         switch (action){
             case JcNotificationPlayer.PLAY:
                 try {
-                    jcAudioPlayer.continueAudio();
-                    jcAudioPlayer.updateNotification();
+                    if(jcAudioPlayer != null) {
+                        jcAudioPlayer.continueAudio();
+                        jcAudioPlayer.updateNotification();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -44,7 +46,9 @@ public class JcPlayerNotificationReceiver extends BroadcastReceiver {
                     jcAudioPlayer.nextAudio();
                 } catch (AudioListNullPointerException e) {
                     try {
-                        jcAudioPlayer.continueAudio();
+                        if(jcAudioPlayer != null) {
+                            jcAudioPlayer.continueAudio();
+                        }
                     } catch (AudioListNullPointerException e1) {
                         e1.printStackTrace();
                     }
@@ -56,7 +60,9 @@ public class JcPlayerNotificationReceiver extends BroadcastReceiver {
                     jcAudioPlayer.previousAudio();
                 } catch (Exception e) {
                     try {
-                        jcAudioPlayer.continueAudio();
+                        if(jcAudioPlayer != null) {
+                            jcAudioPlayer.continueAudio();
+                        }
                     } catch (AudioListNullPointerException e1) {
                         e1.printStackTrace();
                     }
